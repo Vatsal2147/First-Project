@@ -1,0 +1,69 @@
+'''
+
+Welcome to GDB Online.
+GDB online is an online compiler and debugger tool for C, C++, Python, Java, PHP, Ruby, Perl,
+C#, OCaml, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, SQLite, Prolog.
+Code, Compile, Run and Debug online from anywhere in world.
+
+'''
+#Initialising dictionary
+d = {
+    
+}   
+
+def addStudent(name, grade):
+    d[name] = grade
+    print(f"Added {name} with grade {grade}\n")
+    
+def updateStudent(name,grade):
+    if(name in d):
+        d[name]=grade
+        print(f"Updated grade of {name} to {grade}\n")
+    else:
+        print(f"{name} is not found!\n")
+        
+def deleteStudent(name):
+    if name in d:
+        del d[name]
+        print(f"{name} has been successfully deleted\n")
+    else:
+        print(f"{name} not found! \n")
+        
+def displayStudent():
+    if d:
+        for name,grade in d.items():
+            print(f"{name} : {grade}")
+    else:
+        print("No students found!\n ")
+        
+def main():
+    while True:
+        print("Student Grade Management System")
+        print("1. Add Student")
+        print("2. Update Student")
+        print("3. Delete Student")
+        print("4. View Student")
+        print("5. Exit")
+        choice = int(input("Enter your choice: "))
+        if choice == 1:
+            name = input("Enter name of Student: ")
+            grade = int(input("Enter grade: "))
+            addStudent(name, grade)
+        elif choice == 2:
+            name = input("Enter name of Student: ")
+            grade = int(input("Enter grade: "))
+            updateStudent(name, grade)
+        elif choice == 3:
+            name = input("Enter name of student: ")
+            deleteStudent(name)
+        elif choice == 4:
+            displayStudent()
+        elif choice == 5:
+            print("Closing the program.....")
+            break
+        else:
+            print("Invalid Input! ")
+main()
+        
+
+        
